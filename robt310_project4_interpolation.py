@@ -9,6 +9,10 @@ def interpolation(input_image_name, scale_factor):
         print(f'Can not open image at path {input_image_name}')
         return
 
+    if scale_factor <= 1:
+        print(f'Please run command again with scale factor greater than 1.')
+        return
+
     old_height, old_width = image.shape
 
     new_height = int(old_height * scale_factor)
